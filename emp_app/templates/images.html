@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <title>University Employee Management System</title>
+  <style>
+    .col-4 {
+      transform: scale(0.95);
+      transition: 1s;
+    }
+
+    .col-4:hover {
+      transform: scale(1);
+      transition: 1s;
+    }
+
+    p {
+      text-align: justify;
+      padding: 10px;
+    }
+
+    .text {
+      padding: 5px;
+      background-color: cadetblue;
+    }
+
+    .back_img {
+      margin-left: 0;
+      border-radius: 2px;
+      min-height: 700px;
+    }
+
+    img {
+      width: 100%;
+      height: 400px;
+    }
+    body{
+      background-image: url(https://www.activescreening.com/wp-content/uploads/2019/07/about_02-1080x581.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-3 text-center">
+    <h1 class="text-dark"><i class="bi bi-book-fill">Our Employees</i></h1>
+    <hr>
+    <div class="row">
+      {% for img in images %}
+      <div class="col-4 back_img">
+        <img src="{{ img.cover.url }}" style="height:280px" />
+        <div class="text">
+          <h3>{{img.title}}</h3>
+          <p>{{img.description}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+</body>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
